@@ -75,14 +75,26 @@
 
 ---
 
-## 🛠 Сборка
+## 🛠 Сборка, тестирование и отчётность
 
-### Требования
-- GCC / Clang (C11)
-- Make (опционально)
-- Check.h (для тестов)
+### Пример команд
 
-### Компиляция (статическая библиотека)
 ```bash
-gcc -Wall -Werror -Wextra -c *.c
-ar rcs libs21_string.a *.o
+# Сборка статической библиотеки
+make
+
+# Запуск модульных тестов
+make test
+
+# Генерация HTML-отчёта о покрытии кода тестами
+make gcov_report
+
+# Открыть отчёт (Linux / macOS)
+open report/index.html          # macOS
+xdg-open report/index.html      # Linux
+
+# Очистка всех сгенерированных файлов
+make clean
+
+# Форматирование кода по стилю School 21
+make format
